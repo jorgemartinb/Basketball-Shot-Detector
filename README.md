@@ -56,28 +56,8 @@ To run the application, simply execute the main file from your terminal:
 
 ```bash
 python main.py
-
----
+```
 
 ## ✒️ Authors
 
-Meet the developers behind this project:
-
-<table align="center">
-  <tr>
-    <td align="center">
-      <a href="https://github.com/jorgemartinb">
-        <img src="https://github.com/jorgemartinb.png" width="100px;" alt="Jorge Martín"/><br />
-        <sub><b>Jorge Martín</b></sub>
-      </a><br />
-      🔎 <code>@jorgemartinb</code>
-    </td>
-    <td align="center">
-      <a href="https://github.com/gra1111">
-        <img src="https://github.com/gra1111.png" width="100px;" alt="gra1111"/><br />
-        <sub><b>gra1111</b></sub>
-      </a><br />
-      💻 <code>@gra1111</code>
-    </td>
-  </tr>
-</table>
+@jorgemartinb @gra1111
