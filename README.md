@@ -60,4 +60,5 @@ python main.py
 
 ## ✒️ Authors
 
-@jorgemartinb @gra1111
+* [@jorgemartinb](https://github.com/jorgemartinb)
+* [@gra1111](https://github.com/gra1111)
