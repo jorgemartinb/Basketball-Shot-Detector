@@ -1,50 +1,58 @@
-<a href="https://x.com/nearcyan/status/1706914605262684394">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/lab-project-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="assets/lab-project-light.png">
-    <img alt="Lab Session Image" src="assets/lab-project-light.png">
-  </picture>
-</a>
+# Basketball Shot Detector & Security Control 🏀🔐
 
+This is a Computer Vision project developed in Python that combines a secure access control system via a visual passcode interface and a real-time basketball shot detector/counter powered by a custom **YOLOv8** object detection model.
 
-**Welcome to the Lab Project of Computer *Vision I* at Comillas ICAI**. Here, you will find all the necessary files to start your project 💻📷
+## 📋 Project Structure
 
+* **`main.py`**: The main script that manages the application workflow (toggling between the security interface and the basketball detection mode).
+* **`utils.py`**: Contains helper functions for image processing, UI rendering, and detection logic.
+* **`best.pt`**: Custom YOLOv8 model weights optimized to accurately detect the basketball and the hoop.
+* **`limits.json`**: Stores coordinates and spatial limits (Zones of Interest) used to track the ball and determine if a shot was successfully scored.
 
-## Resources (WIP 🛠️)
+---
 
-This laboratory session contains the following:
+## 🚀 Key Features
 
-- 📄 **Guide**: A ``PDF`` guide with instructions to complete the session (currently only available in Spanish).
-- 💻 **Script**: a ``.ipynb`` or ``.py`` file to complete.
-- 🎞️ **Data**: A folder containing images to process.
-- 📝 **Template**: A folder with a ``latex`` template used to generate the guide. You can reuse it to write your report.
-- 🧩 **Assets**: Files to style or improve documentation.
-- 📖 **README**: With links to motivate the session or to introduce the theory concepts.
+### 1. Security Control Panel 🛡️
+* **Restricted Access:** Before launching the game detector, the application deploys an interactive graphical interface on the screen that acts as a digital keypad.
+* **Credentials Validation:** The user must enter the correct passcode by interacting with the visual system. If an incorrect PIN is provided, the system remains locked. Once the correct passcode is entered, the sports analytics module is unlocked.
 
-The folder lab session folder is structured as follows:
+### 2. Real-Time Shot Detector (YOLOv8) 🏀
+* **Object Detection & Identification:** Utilizes a custom-trained YOLOv8 model (`best.pt`) to locate the basketball hoop and the ball with high precision in every frame.
+* **Automated Tracking & Counting:** By defining geometric boundaries stored in `limits.json`, the system monitors the ball's trajectory. When the ball crosses the hoop's critical zone in the correct downward direction, the scoreboard automatically updates in real-time.
+
+---
+
+## 🛠️ Requirements & Technologies
+
+The project is developed using the following core technologies:
+
+* **Python 3.x**
+* **OpenCV (`cv2`)**: For video capture, on-screen UI rendering, and drawing text boxes/buttons.
+* **Ultralytics (YOLOv8)**: For deep learning model inference and object detection.
+* **NumPy**: For efficient mathematical operations on frame matrices.
+
+---
+
+## 📦 Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/jorgemartinb/Basketball-Shot-Detector.git](https://github.com/jorgemartinb/Basketball-Shot-Detector.git)
+    cd Basketball-Shot-Detector
+    ```
+
+2.  **Install the required dependencies:**
+    Make sure your `pip` is updated and install the main libraries:
+    ```bash
+    pip install opencv-python ultralytics numpy
+    ```
+
+---
+
+## 💻 Usage
+
+To run the application, simply execute the main file from your terminal:
 
 ```bash
-.
-├── guide.pdf
-├── src
-│   ├── lab_session.ipynb
-│   ├── lab_session.py
-│   └── ...
-├── data
-│   ├── image1.png
-│   ├── image2.png
-│   └── ...
-├── assets
-├── template
-└── README
-```
-
-## Get ready 🤓 (WIP 🛠️)
-If you're not enrolled or don't have access to the theory, or just want a refresher, check out the resources below before starting the lab.
-
-
-<h2 align="center" style="margin-bottom: 0px;">Here we go: Lab Project!</h2>
-<p align="center">
-  <img src="https://i.giphy.com/media/3orif60PUpLFuG4Sru/giphy.gif" width="300" style="margin-bottom: 0px;" />
-</p>
-<h3 align="center" style="margin-top: 0px;"> Hint: Don't be like Homer</h3>
+python main.py
